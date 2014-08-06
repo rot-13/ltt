@@ -10,9 +10,8 @@
   App.on("start", function() {
     App.links = new App.Collections.RedditLinksCollection;
     return $.getJSON("//reddit.com/r/listentothis/hot.json?jsonp=?").done(function(response) {
-      var link, redditLink, _i, _len, _ref, _ref1, _results;
+      var link, player, redditLink, _i, _len, _ref, _ref1;
       _ref = response.data.children;
-      _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         link = _ref[_i];
         if ((_ref1 = link.data.domain) === "www.youtube.com" || _ref1 === "m.youtube.com" || _ref1 === "youtube.com" || _ref1 === "youtu.be") {
@@ -22,9 +21,10 @@
             videoUrl: link.data.url
           });
         }
-        _results.push(App.links.add(redditLink));
+        App.links.add(redditLink);
       }
-      return _results;
+      player = new YouTubePlayer(App.links);
+      return player.start();
     });
   });
 

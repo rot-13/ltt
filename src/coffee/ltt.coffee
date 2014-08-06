@@ -19,6 +19,9 @@ App.on "start", ->
 
       App.links.add(redditLink)
 
+    player = new YouTubePlayer(App.links)
+    player.start()
+
 
 $ ->
   App.start()
