@@ -1,9 +1,20 @@
-@font-face {
-  font-family: 'FontAwesome';
-  font-weight: normal;
-  font-style: normal;
-  src: url("../fonts/fontawesome-webfont.eot");
-  src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg") format("svg"); }
+footer {
+  border-top: 1px solid #4d4d4d;
+  color: #4d4d4d;
+  margin-top: 30px;
+  padding: 30px 15px;
+  font-size: 14px; }
+  footer p {
+    margin: 0; }
+
 body {
   background-image: url("../images/background.png");
   background-size: 400px 400px; }
+
+.logo {
+  width: 95px;
+  height: 70px;
+  margin-top: 22px;
+  margin-right: 10px;
+  background-image: url("../images/logo.png");
+  background-size: 95px 70px; }
