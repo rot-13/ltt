@@ -9,7 +9,6 @@
 
     %link{:href => '/favicon.png', :rel => 'shortcut icon'}
 
-    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}
     %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/css/index.css", :rel => "stylesheet"}
 
@@ -17,6 +16,7 @@
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"}
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.0.3/backbone.marionette.min.js"}
+
     %script{type: "text/javascript", src: "js/ltt.js"}
     %script{type: "text/javascript", src: "js/models/redditLink.js"}
     %script{type: "text/javascript", src: "js/collections/redditLinksCollection.js"}
@@ -25,8 +25,11 @@
   .container
     .logo.pull-left
     .title.pull-left
-      %h1= 'I Listen to This!'
-      %p.lead= 'All the hot songs from /r/ListenToThis'
+      %h1= 'I Listen to This'
+      %p.lead
+        %span= 'All the hot songs from'
+        %a{:href => 'http://www.reddit.com/r/listentothis', :target => '_blank'}= '/r/ListenToThis'
+        %span<>= '.'
 
   %footer
     .container
