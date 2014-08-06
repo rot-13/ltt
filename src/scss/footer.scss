@@ -1,0 +1,13 @@
+footer{
+  $color: #505050;
+
+  border-top: 1px solid $color;
+  color: $color;
+  margin-top: 30px;
+  padding: 30px 15px;
+  font-size: 12px;
+
+  p{
+    margin: 0;
+  }
+}

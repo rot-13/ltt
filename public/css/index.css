@@ -4,6 +4,15 @@
   font-style: normal;
   src: url("../fonts/fontawesome-webfont.eot");
   src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg") format("svg"); }
+footer {
+  border-top: 1px solid #505050;
+  color: #505050;
+  margin-top: 30px;
+  padding: 30px 15px;
+  font-size: 12px; }
+  footer p {
+    margin: 0; }
+
 body {
   background-image: url("../images/background.png");
   background-size: 400px 400px; }
