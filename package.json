@@ -1,0 +1,15 @@
+{
+    "name": "iic-ninjas-listen-to-this",
+    "version": "0.1.3",
+    "repository":
+        { "type": "git",
+          "url" : "https://github.com/iic-ninjas/ltt"
+        },
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-sass": "~0.5.1",
+        "grunt-contrib-coffee": "~0.7.0",
+        "grunt-contrib-haml": "~0.1.1"
+    }
+}
