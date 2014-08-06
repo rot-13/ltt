@@ -2,6 +2,7 @@ class window.YouTubePlayer
   constructor: (videoURLs) ->
     @videoURLs = videoURLs.map (redditLink)=>
       @idfromUrl(redditLink.get('videoUrl'))
+    @videoURLs = _.compact(@videoURLs)
 
 #    @videoURLs = ["http://www.youtube.com/v/yBl3CIaUW-g?enablejsapi=1&playerapiid=ytplayer&version=3"]
 #    @videoURLs = ['yBl3CIaUW-g']
@@ -18,7 +19,7 @@ class window.YouTubePlayer
     return if @videoURLs.empty
     params = { allowScriptAccess: "always" }
     atts = { id: "myytplayer" }
-    @currentVideoIndex = 0
+    @currentVideoIndex = 11
     swfobject.embedSWF(@buildYouTubeUrl(@videoURLs[@currentVideoIndex]), "ytapiplayer", "425", "356", "8", null, null, params, atts);
 
   buildYouTubeUrl: (videoId)->

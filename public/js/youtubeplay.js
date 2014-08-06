@@ -5,6 +5,8 @@
       this.videoURLs = videoURLs.map(function(redditLink) {
         return _this.idfromUrl(redditLink.get('videoUrl'));
       });
+      this.videoURLs = _.compact(this.videoURLs);
+      console.log(this.videoURLs);
       window.onYouTubePlayerReady = function(playerId) {
         _this.ytplayer = document.getElementById("myytplayer");
         _this.ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
@@ -29,7 +31,7 @@
       atts = {
         id: "myytplayer"
       };
-      this.currentVideoIndex = 0;
+      this.currentVideoIndex = 11;
       return swfobject.embedSWF(this.buildYouTubeUrl(this.videoURLs[this.currentVideoIndex]), "ytapiplayer", "425", "356", "8", null, null, params, atts);
     };
 
