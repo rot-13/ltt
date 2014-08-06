@@ -4,3 +4,17 @@ body {
   background-image: url('../images/background.png');
   background-size: 400px 400px;
 }
+
+.logo {
+  $width: 95px;
+  $height: 70px;
+
+  width: $width;
+  height: $height;
+
+  margin-top: 22px;
+  margin-right: 10px;
+
+  background-image: url('../images/logo.png');
+  background-size: $width $height;
+}
