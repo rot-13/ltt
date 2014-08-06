@@ -1,18 +1,20 @@
 (function() {
   window.YouTubePlayer = (function() {
     function YouTubePlayer(videoURLs) {
+      var _this = this;
       this.videoURLs = videoURLs.map(function(redditLink) {
         return redditLink.get('videoUrl');
       });
       this.videoURLs = ["http://www.youtube.com/v/yBl3CIaUW-g?enablejsapi=1&playerapiid=ytplayer&version=3"];
       window.onYouTubePlayerReady = function(playerId) {
-        var ytplayer;
-        ytplayer = document.getElementById("myytplayer");
-        return ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
+        _this.ytplayer = document.getElementById("myytplayer");
+        _this.ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
+        return _this.ytplayer.playVideo();
       };
       window.onytplayerStateChange = function(newState) {
         if (newState === 0) {
-          return alert("Player's new state: " + newState);
+          _this.ytplayer.cueVideoById('6Vc3YtKcAdI');
+          return _this.ytplayer.playVideo();
         }
       };
     }

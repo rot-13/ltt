@@ -4,12 +4,14 @@ class window.YouTubePlayer
       redditLink.get('videoUrl')
 
     @videoURLs = ["http://www.youtube.com/v/yBl3CIaUW-g?enablejsapi=1&playerapiid=ytplayer&version=3"]
-    window.onYouTubePlayerReady = (playerId)->
-      ytplayer = document.getElementById("myytplayer");
-      ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
-    window.onytplayerStateChange = (newState)->
+    window.onYouTubePlayerReady = (playerId)=>
+      @ytplayer = document.getElementById("myytplayer");
+      @ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
+      @ytplayer.playVideo()
+    window.onytplayerStateChange = (newState)=>
       if newState == 0
-        alert("Player's new state: " + newState);
+        @ytplayer.cueVideoById('6Vc3YtKcAdI')
+        @ytplayer.playVideo()
 
   start: ->
     return if @videoURLs.empty
