@@ -25,14 +25,18 @@
 
 %body
   .container
-    .logo.pull-left
-    .title.pull-left
-      %h1= 'I Listen to This'
-      %p.lead
-        %span= 'All the hot songs from'
-        %a{:href => 'http://www.reddit.com/r/listentothis', :target => '_blank'}= '/r/ListenToThis'
-        %span<>= '.'
-      #ytapiplayer 'You need Flash player 8+ and JavaScript enabled to view this video.'
+    .row
+      .col-lg-12
+        .logo.pull-left
+        .title.pull-left
+          %h1= 'I Listen to This'
+          %p.lead
+            %span= 'All the hot songs from'
+            %a{:href => 'http://www.reddit.com/r/listentothis', :target => '_blank'}= '/r/ListenToThis'
+            %span<>= '.'
+    .row
+      .col-lg-12
+        #ytapiplayer 'You need Flash player 8+ and JavaScript enabled to view this video.'
 
   %footer
     .container
