@@ -1,6 +1,11 @@
-%html
+!!! 5
+%html{:lang => 'en'}
   %head
     %title= 'ListenToThis'
+
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'description', :content => 'Listen to the hot songs in /r/ListenToThis'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no'}
 
     %link{:href => '/favicon.png', :rel => 'shortcut icon'}
 
@@ -9,5 +14,6 @@
     %link{:href => "/css/index.css", :rel => "stylesheet"}
 
 %body
-  %span= 'Hello!'
-  %i.fa.fa-spinner.fa-thumbs-up
+  .container.text-center
+    %h1= 'Listen to This!'
+    %p.lead= 'All the hot songs from /r/ListenToThis'
