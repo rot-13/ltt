@@ -1,14 +1,13 @@
 class window.YouTubePlayer
+
   constructor: (videoURLs) ->
     @videoURLs = videoURLs.map (redditLink)=>
       @idfromUrl(redditLink.get('videoUrl'))
     @videoURLs = _.compact(@videoURLs)
 
-#    @videoURLs = ["http://www.youtube.com/v/yBl3CIaUW-g?enablejsapi=1&playerapiid=ytplayer&version=3"]
-#    @videoURLs = ['yBl3CIaUW-g']
-    window.onYouTubePlayerReady = (playerId)=>
-      @ytplayer = document.getElementById("myytplayer");
-      @ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
+    window.onYouTubePlayerReady = (_) =>
+      @ytplayer = document.getElementById("myytplayer")
+      @ytplayer.addEventListener("onStateChange", "onytplayerStateChange")
       @ytplayer.playVideo()
     window.onytplayerStateChange = (newState)=>
       if newState == 0

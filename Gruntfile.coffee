@@ -34,6 +34,16 @@ module.exports = (grunt) ->
           ext: '.html'
         ]
 
+    copy:
+      main:
+        files: [
+          expand: true
+          cwd: 'src/images/'
+          src: ['**']
+          dest: 'public/images'
+          filter: 'isFile'
+        ]
+
     watch:
       sass:
         files: 'src/scss/**/*.scss'
@@ -48,7 +58,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-sass')
   grunt.loadNpmTasks('grunt-contrib-coffee')
   grunt.loadNpmTasks('grunt-contrib-haml')
+  grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('compile', ['sass', 'coffee', 'haml'])
+  grunt.registerTask('compile', ['sass', 'coffee', 'haml', 'copy'])
   grunt.registerTask('default', ['compile'])

@@ -1,7 +1,7 @@
 node_modules
+public
 .sass-cache
-build
-*.zip
 .idea/**
 .powder
+.log
 **.DS_Store*
