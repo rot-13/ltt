@@ -17,6 +17,10 @@ body {
   background-size: $width $height;
 }
 
+.next-button {
+  margin-top: 8px;
+}
+
 footer{
   $color: #4d4d4d;
 
@@ -28,5 +32,9 @@ footer{
 
   p {
     margin: 0;
+  }
+
+  .before-punctuation {
+    margin-right: -4px
   }
 }

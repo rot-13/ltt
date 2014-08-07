@@ -20,8 +20,10 @@ App.on "start", ->
 
       App.links.add(redditLink)
 
-    player = new App.Services.YouTubePlayer(App.links)
-    player.start()
+    App.player = new App.Services.YouTubePlayer(App.links)
+    App.player.start()
+
+    $(".next-button").on "click", App.player.playNextVideo
 
 $ ->
   App.start()

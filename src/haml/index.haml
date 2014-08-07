@@ -37,6 +37,9 @@
     .row
       .col-xs-12
         #player
+        .buttons
+          %button.next-button.btn.btn-default{type: "button"}
+            Next song &rarr;
 
   %footer
     .container
@@ -48,7 +51,7 @@
             %a{:href => 'http://notninjas.com', :target => '_blank'}= 'Not Ninjas'
             at the eBay Israel Innovation Center:
           %p
-            %a{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
+            %a.before-punctuation{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
             ,
             %a{:href => 'https://twitter.com/gardenofwine', :target => '_blank'}= '@gardenofwine'
             and
