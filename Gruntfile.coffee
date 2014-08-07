@@ -54,6 +54,9 @@ module.exports = (grunt) ->
       haml:
         files: 'src/haml/**/*.haml'
         tasks: ['haml']
+      images:
+        files: 'src/images/**'
+        tasks: ['copy']
 
   grunt.loadNpmTasks('grunt-contrib-sass')
   grunt.loadNpmTasks('grunt-contrib-coffee')
