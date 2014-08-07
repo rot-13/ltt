@@ -1,13 +1,12 @@
 window.App = new Backbone.Marionette.Application()
 
 App.Models = {}
-App.Collections = {}
 App.Views = {}
 App.Services = {}
 
 App.on "start", ->
 
-  App.links = new App.Collections.RedditLinksCollection
+  App.links = new App.Models.RedditLinksCollection
 
   $.getJSON("//reddit.com/r/listentothis/hot.json?jsonp=?").done (response) ->
 

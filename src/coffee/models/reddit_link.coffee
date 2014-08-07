@@ -5,5 +5,5 @@ class App.Models.RedditLink extends Backbone.Model
     title: null
     redditUrl: null
 
-class App.Collections.RedditLinksCollection extends Backbone.Collection
+class App.Models.RedditLinksCollection extends Backbone.Collection
   model: App.Models.RedditLink
