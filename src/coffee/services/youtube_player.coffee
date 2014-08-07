@@ -1,9 +1,7 @@
 class App.Services.YouTubePlayer
 
-  constructor: (videoURLs) ->
-    @videoURLs = videoURLs.map (redditLink)=>
-      @idfromUrl(redditLink.get('videoUrl'))
-    @videoURLs = _.compact(@videoURLs)
+  constructor: (redditLinks) ->
+    @redditLinks = redditLinks
 
     window.onYouTubePlayerReady = (_) =>
       @ytplayer = document.getElementById("myytplayer")
@@ -12,20 +10,14 @@ class App.Services.YouTubePlayer
     window.onytplayerStateChange = (newState)=>
       if newState == 0
         @currentVideoIndex++
-        @ytplayer.loadVideoById(@videoURLs[@currentVideoIndex])
+        @ytplayer.loadVideoById(@redditLinks.at(@currentVideoIndex).get("youtubeId"))
 
   start: ->
-    return if @videoURLs.empty
+    return if @redditLinks.empty
     params = { allowScriptAccess: "always" }
     atts = { id: "myytplayer" }
-    @currentVideoIndex = 11
-    swfobject.embedSWF(@buildYouTubeUrl(@videoURLs[@currentVideoIndex]), "player", "500", "400", "8", null, null, params, atts);
+    @currentVideoIndex = 0
+    swfobject.embedSWF(@buildYouTubeUrl(@redditLinks.at(@currentVideoIndex).get("youtubeId")), "player", "500", "400", "8", null, null, params, atts);
 
   buildYouTubeUrl: (videoId)->
     "http://www.youtube.com/v/" + videoId + "?enablejsapi=1&playerapiid=ytplayer&version=3"
-
-  idfromUrl: (url)->
-    regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
-    match = url.match(regExp)
-    if (match && match[2].length == 11)
-      match[2]

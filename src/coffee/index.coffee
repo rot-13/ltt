@@ -14,6 +14,7 @@ App.on "start", ->
       if link.data.domain in ["www.youtube.com", "m.youtube.com", "youtube.com", "youtu.be"]
         redditLink = new App.Models.RedditLink
           redditUrl: "http://reddit.com#{link.data.permalink}"
+          youtubeId: getYoutubeId(link.data.url)
           title: link.data.title
           videoUrl: link.data.url
 
