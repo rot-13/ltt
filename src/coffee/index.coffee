@@ -3,6 +3,7 @@ window.App = new Backbone.Marionette.Application()
 App.Models = {}
 App.Collections = {}
 App.Views = {}
+App.Services = {}
 
 App.on "start", ->
 
@@ -19,9 +20,8 @@ App.on "start", ->
 
       App.links.add(redditLink)
 
-    player = new YouTubePlayer(App.links)
+    player = new App.Services.YouTubePlayer(App.links)
     player.start()
-
 
 $ ->
   App.start()

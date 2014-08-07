@@ -1,4 +1,4 @@
-class window.YouTubePlayer
+class App.Services.YouTubePlayer
 
   constructor: (videoURLs) ->
     @videoURLs = videoURLs.map (redditLink)=>
