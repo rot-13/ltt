@@ -12,7 +12,6 @@
     %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/css/index.css", :rel => "stylesheet"}
     %script{:src =>'http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js'}
-    %script{:src =>'js/youtubeplay.js'}
 
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"}
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
@@ -26,7 +25,7 @@
 %body
   .container
     .row
-      .col-lg-12
+      .col-xs-12
         .logo.pull-left
         .title.pull-left
           %h1= 'I Listen to This'
@@ -35,19 +34,21 @@
             %a{:href => 'http://www.reddit.com/r/listentothis', :target => '_blank'}= '/r/ListenToThis'
             %span<>= '.'
     .row
-      .col-lg-12
-        #ytapiplayer
+      .col-xs-12
+        #player
 
   %footer
     .container
-      %p
-        %strong I Listen to This
-        was created by the
-        %a{:href => 'http://notninjas.com', :target => '_blank'}= 'Not Ninjas'
-        at the eBay Israel Innovation Center:
-      %p
-        %a{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
-        ,
-        %a{:href => 'https://twitter.com/gardenofwine', :target => '_blank'}= '@gardenofwine'
-        and
-        %a{:href => 'https://twitter.com/ShayHDavidson', :target => '_blank'}= '@ShayHDavidson'
+      .row
+        .col-xs-12
+          %p
+            %strong I Listen to This
+            was created by the
+            %a{:href => 'http://notninjas.com', :target => '_blank'}= 'Not Ninjas'
+            at the eBay Israel Innovation Center:
+          %p
+            %a{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
+            ,
+            %a{:href => 'https://twitter.com/gardenofwine', :target => '_blank'}= '@gardenofwine'
+            and
+            %a{:href => 'https://twitter.com/ShayHDavidson', :target => '_blank'}= '@ShayHDavidson'

@@ -19,7 +19,7 @@ class App.Services.YouTubePlayer
     params = { allowScriptAccess: "always" }
     atts = { id: "myytplayer" }
     @currentVideoIndex = 11
-    swfobject.embedSWF(@buildYouTubeUrl(@videoURLs[@currentVideoIndex]), "ytapiplayer", "425", "356", "8", null, null, params, atts);
+    swfobject.embedSWF(@buildYouTubeUrl(@videoURLs[@currentVideoIndex]), "player", "500", "400", "8", null, null, params, atts);
 
   buildYouTubeUrl: (videoId)->
     "http://www.youtube.com/v/" + videoId + "?enablejsapi=1&playerapiid=ytplayer&version=3"
