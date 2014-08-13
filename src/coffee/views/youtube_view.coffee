@@ -13,6 +13,6 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
 
   _embeddedPlayerURL: ->
     firstId = _.first(@options.ids)
-    allIds  = @options.ids.join(',')
+    allIds  = _.last(@options.ids, @options.ids.length - 1).join(',')
 
     "#{BASE_URL}/#{firstId}?autoplay=1&playlist=#{allIds}"
