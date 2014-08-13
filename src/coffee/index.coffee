@@ -23,8 +23,6 @@ App.on "start", ->
         App.links.add(redditLink)
 
     ids = App.links.pluck('youtubeId')
-    width = App.player.$el.width()
-    height = App.player.$el.height()
-    App.player.show(new App.Views.YoutubeView(width: width, height: height, ids: ids))
+    App.player.show(new App.Views.YoutubeView(ids: ids))
 
 $ -> App.start()

@@ -6,8 +6,8 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
   tagName: 'iframe'
 
   onRender: ->
-    @$el.attr(width: @options.width)
-    @$el.attr(height: @options.height)
+    @$el.attr(width: '100%')
+    @$el.attr(height: '100%')
     @$el.attr(frameborder: 0)
     @$el.attr(src: @_embeddedPlayerURL())
 
