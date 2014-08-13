@@ -14,13 +14,16 @@ App.on "start", ->
       if link.data.domain in ["www.youtube.com", "m.youtube.com", "youtube.com", "youtu.be"]
         redditLink = new App.Models.RedditLink
           redditUrl: "http://reddit.com#{link.data.permalink}"
+          youtubeId: getYoutubeId(link.data.url)
           title: link.data.title
           videoUrl: link.data.url
 
       App.links.add(redditLink)
 
-    player = new App.Services.YouTubePlayer(App.links)
-    player.start()
+    App.player = new App.Services.YouTubePlayer(App.links)
+    App.player.start()
+
+    $(".next-button").on "click", App.player.playNextVideo
 
 $ ->
   App.start()

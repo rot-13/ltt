@@ -1,31 +1,27 @@
 class App.Services.YouTubePlayer
 
-  constructor: (videoURLs) ->
-    @videoURLs = videoURLs.map (redditLink)=>
-      @idfromUrl(redditLink.get('videoUrl'))
-    @videoURLs = _.compact(@videoURLs)
+  constructor: (redditLinks) ->
+    @redditLinks = redditLinks
 
-    window.onYouTubePlayerReady = (_) =>
+    window.onYouTubePlayerReady = () =>
       @ytplayer = document.getElementById("myytplayer")
       @ytplayer.addEventListener("onStateChange", "onytplayerStateChange")
       @ytplayer.playVideo()
+
     window.onytplayerStateChange = (newState)=>
       if newState == 0
-        @currentVideoIndex++
-        @ytplayer.loadVideoById(@videoURLs[@currentVideoIndex])
+        @playNextVideo()
 
   start: ->
-    return if @videoURLs.empty
+    return if @redditLinks.empty
+    @currentVideoIndex = 0
     params = { allowScriptAccess: "always" }
     atts = { id: "myytplayer" }
-    @currentVideoIndex = 11
-    swfobject.embedSWF(@buildYouTubeUrl(@videoURLs[@currentVideoIndex]), "player", "500", "400", "8", null, null, params, atts);
+    youtubeId = @redditLinks.at(@currentVideoIndex).get("youtubeId")
+    youtubeUrl = "http://www.youtube.com/v/" + youtubeId + "?enablejsapi=1&playerapiid=ytplayer&version=3"
+    swfobject.embedSWF(youtubeUrl, "player", "500", "400", "8", null, null, params, atts);
 
-  buildYouTubeUrl: (videoId)->
-    "http://www.youtube.com/v/" + videoId + "?enablejsapi=1&playerapiid=ytplayer&version=3"
+  playNextVideo: () =>
+    @currentVideoIndex++
+    @ytplayer.loadVideoById(@redditLinks.at(@currentVideoIndex).get("youtubeId"))
 
-  idfromUrl: (url)->
-    regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
-    match = url.match(regExp)
-    if (match && match[2].length == 11)
-      match[2]

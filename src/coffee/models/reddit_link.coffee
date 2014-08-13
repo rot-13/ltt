@@ -2,6 +2,7 @@ class App.Models.RedditLink extends Backbone.Model
 
   defaults:
     linkUrl: null
+    youtubeId: null
     title: null
     redditUrl: null
 

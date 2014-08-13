@@ -18,6 +18,7 @@
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"}
     %script{type: "text/javascript", src: "//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.0.3/backbone.marionette.min.js"}
 
+    %script{type: "text/javascript", src: "js/utils/youtubeId.js"}
     %script{type: "text/javascript", src: "js/index.js"}
     %script{type: "text/javascript", src: "js/models/reddit_link.js"}
     %script{type: "text/javascript", src: "js/services/youtube_player.js"}
@@ -36,6 +37,9 @@
     .row
       .col-xs-12
         #player
+        .buttons
+          %button.next-button.btn.btn-default{type: "button"}
+            Next song &rarr;
 
   %footer
     .container
@@ -47,7 +51,7 @@
             %a{:href => 'http://notninjas.com', :target => '_blank'}= 'Not Ninjas'
             at the eBay Israel Innovation Center:
           %p
-            %a{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
+            %a.before-punctuation{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
             ,
             %a{:href => 'https://twitter.com/gardenofwine', :target => '_blank'}= '@gardenofwine'
             and
