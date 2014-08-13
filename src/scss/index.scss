@@ -1,3 +1,5 @@
+@import 'photo';
+
 body {
   background-image: url('../images/background.png');
   background-size: 400px 400px;
@@ -20,7 +22,6 @@ body {
 #player {
   width: 100%;
   height: 29vw;
-  background-color: rgba(white, 0.35);
 }
 
 .next-button {
@@ -30,7 +31,7 @@ body {
 footer{
   $color: #4d4d4d;
 
-  border-top: 1px solid $color;
+  border-top: 1px dashed $color;
   color: $color;
   margin-top: 30px;
   padding-top: 30px;

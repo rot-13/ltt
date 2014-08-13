@@ -1,0 +1,13 @@
+.photo {
+  $shadow-distance: 3px;
+  $shadow-blur: 3px;
+  $border-size: 12px;
+
+
+  transform: rotate(-2deg);
+  box-shadow: $shadow-distance $shadow-distance $shadow-blur $shadow-blur rgba(black, 0.5);
+  border: $border-size solid white;
+  border-radius: 2px;
+  background-color: black;
+  padding: 1px;
+}

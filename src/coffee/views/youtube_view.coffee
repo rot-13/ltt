@@ -15,4 +15,14 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
     firstId = _.first(@options.ids)
     allIds  = _.last(@options.ids, @options.ids.length - 1).join(',')
 
-    "#{BASE_URL}/#{firstId}?autoplay=1&playlist=#{allIds}"
+    params =
+      autoplay: 1
+      playlist: allIds
+      controls: 1
+      fs: 0
+      autohide: 0
+      modestbranding: 1
+      rel: 0
+      showinfo: 0
+
+    "#{BASE_URL}/#{firstId}?#{$.param(params)}"
