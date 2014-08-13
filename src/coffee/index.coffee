@@ -2,11 +2,13 @@ window.App = new Backbone.Marionette.Application()
 
 App.Models = {}
 App.Views = {}
-App.Services = {}
 
 App.on "start", ->
 
   App.links = new App.Models.RedditLinksCollection
+
+  App.addRegions
+    player: '#player'
 
   $.getJSON("//reddit.com/r/listentothis/hot.json?jsonp=?").done (response) ->
 
@@ -15,15 +17,14 @@ App.on "start", ->
         redditLink = new App.Models.RedditLink
           redditUrl: "http://reddit.com#{link.data.permalink}"
           youtubeId: getYoutubeId(link.data.url)
-          title: link.data.title
-          videoUrl: link.data.url
+          title:     link.data.title
+          videoUrl:  link.data.url
 
-      App.links.add(redditLink)
+        App.links.add(redditLink)
 
-    App.player = new App.Services.YouTubePlayer(App.links)
-    App.player.start()
+    ids = App.links.pluck('youtubeId')
+    width = App.player.$el.width()
+    height = App.player.$el.height()
+    App.player.show(new App.Views.YoutubeView(width: width, height: height, ids: ids))
 
-    $(".next-button").on "click", App.player.playNextVideo
-
-$ ->
-  App.start()
+$ -> App.start()

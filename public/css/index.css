@@ -10,6 +10,14 @@ body {
   background-image: url("../images/logo.png");
   background-size: 95px 70px; }
 
+#player {
+  width: 640px;
+  height: 350px;
+  background-color: white; }
+
+.next-button {
+  margin-top: 8px; }
+
 footer {
   border-top: 1px solid #4d4d4d;
   color: #4d4d4d;
@@ -18,3 +26,5 @@ footer {
   font-size: 14px; }
   footer p {
     margin: 0; }
+  footer .before-punctuation {
+    margin-right: -4px; }

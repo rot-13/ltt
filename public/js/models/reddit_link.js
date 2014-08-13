@@ -13,6 +13,7 @@
 
     RedditLink.prototype.defaults = {
       linkUrl: null,
+      youtubeId: null,
       title: null,
       redditUrl: null
     };

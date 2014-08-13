@@ -3,4 +3,6 @@ node_modules
 .idea/**
 .powder
 .log
+tmp
+public
 **.DS_Store*

@@ -17,6 +17,12 @@ body {
   background-size: $width $height;
 }
 
+#player {
+  width: 640px;
+  height: 350px;
+  background-color: white;
+}
+
 .next-button {
   margin-top: 8px;
 }
