@@ -3,6 +3,7 @@
 body {
   background-image: url('../images/background.png');
   background-size: 400px 400px;
+  background-position: 25px 25px;
 }
 
 .logo {
@@ -19,9 +20,17 @@ body {
   background-size: $width $height;
 }
 
-#player {
+#player, #playlist {
   width: 100%;
   height: 29vw;
+}
+
+#player {
+  background-color: black;
+}
+
+#playlist {
+  background-color: #c7c7c7;
 }
 
 .next-button {
