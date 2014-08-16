@@ -6,6 +6,9 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
   tagName: 'iframe'
   id: 'youtube'
 
+  initialize: ->
+    @listenTo(App, 'playlist:selected', @_onPlaylistSelected)
+
   onRender: ->
     @_addPlayerAttributes()
     @_addJavascriptAPI()
@@ -32,6 +35,9 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
           return if event.data != 1
           App.trigger('youtube:playing', event.target.getPlaylistIndex())
     )
+
+  _onPlaylistSelected: (index) ->
+    @API.playVideoAt(index) if @API
 
   _embeddedPlayerURL: ->
     ids = @collection.pluck('youtubeId')

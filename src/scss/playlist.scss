@@ -48,6 +48,10 @@
     &:hover {
       background-color: $gray;
       color: white;
+
+      &:active {
+        color: white;
+      }
     }
 
     &.playing {
