@@ -22,6 +22,8 @@ body {
   background-image: url('../images/logo.png');
   background-size: $width $height;
   background-repeat: no-repeat;
+
+  @media (max-width: 480px) { display: none; }
 }
 
 .player {
