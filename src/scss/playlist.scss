@@ -2,13 +2,20 @@
   $gray: #757575;
 
   background-color: white;
-  overflow-y: scroll;
 
   ul {
+    overflow-y: scroll;
+    height: 100%;
+
     margin: 0;
     padding: 0;
     border-left: 1px dashed $gray;
     border-right: 1px dashed $gray;
+  }
+
+  .ul-border {
+    height: 1px;
+    border-top: 1px dashed $gray;
   }
 
   li {
@@ -19,6 +26,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-right: 1px dashed $gray;
 
     &:not(:last-child) {
       border-bottom: 1px dashed $gray;
