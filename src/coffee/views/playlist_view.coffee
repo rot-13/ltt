@@ -12,10 +12,12 @@ class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
   _playlistIndex: ->
     @model.collection.indexOf(@model) + 1
 
+
 class App.Views.PlaylistView extends Backbone.Marionette.CollectionView
   childView: App.Views.PlaylistRowView
   tagName: 'ul'
+  edgeBorderTemplate: "<div class='ul-border'></div>"
 
   onShow: ->
-    @$el.parent().prepend("<div class='ul-border'></div>")
-    @$el.parent().append("<div class='ul-border'></div>")
+    @$el.parent().prepend(@edgeBorderTemplate)
+    @$el.parent().append(@edgeBorderTemplate)
