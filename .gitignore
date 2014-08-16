@@ -4,6 +4,4 @@ node_modules
 .powder
 .log
 tmp
-public
-tmp
 **.DS_Store*
