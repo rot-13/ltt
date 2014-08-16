@@ -10,7 +10,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'src/scss'
           src: ['**/index.scss']
-          dest: 'public/css'
+          dest: 'public'
           ext: '.css'
         ]
 
@@ -20,7 +20,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'src/coffee'
           src: '**/*.coffee'
-          dest: 'public/js'
+          dest: 'tmp/js'
           ext: '.js'
         ]
 
@@ -44,6 +44,11 @@ module.exports = (grunt) ->
           filter: 'isFile'
         ]
 
+    concat:
+      dist:
+        src: ['tmp/**/*.js'],
+        dest: 'public/index.js',
+
     watch:
       sass:
         files: 'src/scss/**/*.scss'
@@ -62,7 +67,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-coffee')
   grunt.loadNpmTasks('grunt-contrib-haml')
   grunt.loadNpmTasks('grunt-contrib-copy')
+  grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('compile', ['sass', 'coffee', 'haml', 'copy'])
+  grunt.registerTask('compile', ['sass', 'coffee', 'haml', 'concat', 'copy'])
   grunt.registerTask('default', ['compile'])
