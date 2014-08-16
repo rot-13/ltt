@@ -55,7 +55,7 @@ module.exports = (grunt) ->
         tasks: ['sass']
       coffee:
         files: 'src/coffee/**/*.coffee'
-        tasks: ['coffee']
+        tasks: ['coffee', 'concat']
       haml:
         files: 'src/haml/**/*.haml'
         tasks: ['haml']
