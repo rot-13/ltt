@@ -27,5 +27,7 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
       rel: 0
       showinfo: 0
       loop: 1
+      version: 3
+      enablejsapi: 1
 
     "#{BASE_URL}/#{firstId}?#{$.param(params)}"

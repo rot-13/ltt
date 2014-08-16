@@ -9,6 +9,7 @@
   box-shadow: $shadow-distance $shadow-distance $shadow-blur $shadow-blur rgba(black, 0.5);
   border: $border-size solid white;
   border-radius: 2px;
+  padding: 1px;
 
   &.left {
     $transform: rotate(-2deg);

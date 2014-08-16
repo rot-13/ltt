@@ -1,13 +1,16 @@
 class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
-  template: _.template('<%= title %>')
+  template: _.template('<strong><%= index %>.</strong> <%= title %>')
   tagName: 'li'
 
   serializeData: ->
-    title: @_truncatedTitle()
+    title: @_playlistTitle()
+    index: @_playlistIndex()
 
-  _truncatedTitle: ->
+  _playlistTitle: ->
     @model.get('title').replace(/\s*\(.*?\)\s*/g, '').replace(/\s*\[.*?\]\s*/g, '').replace('--', '-')
 
+  _playlistIndex: ->
+    @model.collection.indexOf(@model) + 1
 
 class App.Views.PlaylistView extends Backbone.Marionette.CollectionView
   childView: App.Views.PlaylistRowView

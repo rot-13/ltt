@@ -1,32 +1,43 @@
 .playlist {
+  $gray: #757575;
 
-  background-color: black;
+  background-color: white;
   overflow-y: scroll;
 
   ul {
     margin: 0;
     padding: 0;
+    border-left: 1px dashed $gray;
+    border-right: 1px dashed $gray;
   }
 
   li {
-    $gray: #757575;
-    $light-gray: #858585;
-
-    color: white;
+    color: $gray;
     list-style-type: none;
     padding: 5px 10px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:not(:last-child) {
       border-bottom: 1px dashed $gray;
     }
 
+    &:nth-child(even) {
+      background-color: #fffefa;
+    }
+
+    &:nth-child(odd) {
+      background: #f7f2eb;
+    }
+
     &:hover {
       background-color: $gray;
+      color: white;
     }
 
     &.playing {
-      background-color: $light-gray;
     }
 
     &:active {
