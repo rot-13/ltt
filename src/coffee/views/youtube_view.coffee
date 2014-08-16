@@ -26,5 +26,6 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
       modestbranding: 1
       rel: 0
       showinfo: 0
+      loop: 1
 
     "#{BASE_URL}/#{firstId}?#{$.param(params)}"
