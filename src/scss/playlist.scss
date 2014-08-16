@@ -1,0 +1,36 @@
+.playlist {
+
+  background-color: black;
+  overflow-y: scroll;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    $gray: #757575;
+    $light-gray: #858585;
+
+    color: white;
+    list-style-type: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      border-bottom: 1px dashed $gray;
+    }
+
+    &:hover {
+      background-color: $gray;
+    }
+
+    &.playing {
+      background-color: $light-gray;
+    }
+
+    &:active {
+      color: black;
+    }
+  }
+}

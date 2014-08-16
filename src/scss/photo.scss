@@ -9,13 +9,22 @@
   box-shadow: $shadow-distance $shadow-distance $shadow-blur $shadow-blur rgba(black, 0.5);
   border: $border-size solid white;
   border-radius: 2px;
-  padding: 1px;
 
   &.left {
-    transform: rotate(-2deg);
+    $transform: rotate(-2deg);
+    transform: $transform;
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
+    -moz-transform: $transform;
+    -o-transform: $transform;
   }
 
   &.right {
-    transform: rotate(3deg);
+    $transform: rotate(3deg);
+    transform: $transform;
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
+    -moz-transform: $transform;
+    -o-transform: $transform;
   }
 }

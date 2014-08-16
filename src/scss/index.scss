@@ -1,5 +1,6 @@
 @import 'photo';
 @import 'spinner';
+@import 'playlist';
 @import 'footer';
 
 body {
@@ -9,7 +10,7 @@ body {
 }
 
 .logo {
-  $width: 95px;
+  $width: 100px;
   $height: 70px;
 
   width: $width;
@@ -20,12 +21,13 @@ body {
 
   background-image: url('../images/logo.png');
   background-size: $width $height;
+  background-repeat: no-repeat;
 }
 
 .player {
   background-color: black;
 }
 
-.playlist {
-  background-color: black;
+a.subreddit {
+  border-bottom: dashed 1px #428bca;
 }
