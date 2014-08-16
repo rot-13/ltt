@@ -2,14 +2,36 @@ class App.Views.YoutubeView extends Backbone.Marionette.ItemView
 
   BASE_URL = 'https://www.youtube.com/embed'
 
-  template: _.template("")
+  template: _.template('')
   tagName: 'iframe'
+  id: 'youtube'
 
   onRender: ->
-    @$el.attr(width: '100%')
-    @$el.attr(height: '100%')
-    @$el.attr(frameborder: 0)
-    @$el.attr(src: @_embeddedPlayerURL())
+    @_addPlayerAttributes()
+    @_addJavascriptAPI()
+
+  _addPlayerAttributes: ->
+    @$el.attr(
+      width: '100%'
+      height: '100%'
+      frameborder: 0
+      src: @_embeddedPlayerURL()
+    )
+
+  _addJavascriptAPI: ->
+    tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+    window.onYouTubeIframeAPIReady = => @_onYoutubeReady()
+
+  _onYoutubeReady: ->
+    @API = new YT.Player('youtube',
+      events:
+        onStateChange: (event) ->
+          return if event.data != 1
+          App.trigger('youtube:playing', event.target.getPlaylistIndex())
+    )
 
   _embeddedPlayerURL: ->
     ids = @collection.pluck('youtubeId')

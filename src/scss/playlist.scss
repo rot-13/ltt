@@ -31,6 +31,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border-right: 1px dashed $gray;
+    height: 30px;
 
     &:not(:last-child) {
       border-bottom: 1px dashed $gray;
@@ -50,6 +51,8 @@
     }
 
     &.playing {
+      background-color: $blue;
+      color: white;
     }
 
     &:active {
