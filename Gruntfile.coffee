@@ -10,7 +10,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'src/scss'
           src: ['**/index.scss']
-          dest: 'public'
+          dest: 'public/css'
           ext: '.css'
         ]
 
@@ -47,7 +47,7 @@ module.exports = (grunt) ->
     concat:
       dist:
         src: ['tmp/**/*.js'],
-        dest: 'public/index.js',
+        dest: 'public/js/index.js',
 
     watch:
       sass:
