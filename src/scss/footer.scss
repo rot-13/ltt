@@ -1,0 +1,17 @@
+footer {
+  $color: #4d4d4d;
+
+  border-top: 1px dashed $color;
+  color: $color;
+  margin-top: 30px;
+  padding-top: 30px;
+  font-size: 14px;
+
+  p {
+    margin: 0;
+  }
+
+  .before-punctuation {
+    margin-right: -4px
+  }
+}

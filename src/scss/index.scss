@@ -1,4 +1,6 @@
 @import 'photo';
+@import 'spinner';
+@import 'spinner';
 
 body {
   background-image: url('../images/background.png');
@@ -31,26 +33,4 @@ body {
 
 #playlist {
   background-color: #c7c7c7;
-}
-
-.next-button {
-  margin-top: 8px;
-}
-
-footer{
-  $color: #4d4d4d;
-
-  border-top: 1px dashed $color;
-  color: $color;
-  margin-top: 30px;
-  padding-top: 30px;
-  font-size: 14px;
-
-  p {
-    margin: 0;
-  }
-
-  .before-punctuation {
-    margin-right: -4px
-  }
 }

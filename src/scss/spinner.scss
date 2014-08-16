@@ -1,0 +1,16 @@
+.spinner {
+  $size: 28px;
+
+  width: $size;
+  height: $size;
+
+  background-size: $size $size;
+  background-image: url('../images/spinner.gif');
+
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 38px;
+  right: 0;
+}
