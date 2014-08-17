@@ -1,0 +1,26 @@
+.share-button {
+  $size: 32px;
+
+  width: $size;
+  height: $size;
+  $shadow-distance: 1px;
+  $shadow-blur: 1px;
+
+  background-size: $size $size;
+  background-repeat: no-repeat;
+
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    background-size: $size - 1 $size - 1;
+  }
+
+  &.facebook {
+    background-image: url('../images/facebook.png');
+  }
+
+  &.twitter {
+    background-image: url('../images/twitter.png');
+  }
+}
