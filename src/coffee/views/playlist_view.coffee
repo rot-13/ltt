@@ -1,5 +1,5 @@
 class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
-  template: _.template('<strong><%= index %>.</strong> <%= title %>')
+  template: _.template("<div class='title'><strong><%= index %>.</strong> <%= title %></div><div class='link'><a href='<%= url %>' target='_blank'>Link</a></div>")
   tagName: 'li'
 
   events:
@@ -8,6 +8,7 @@ class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
   serializeData: ->
     title: @_playlistTitle()
     index: @_playlistIndex() + 1
+    url: @model.get('redditUrl')
 
   _playlistTitle: ->
     @model.get('title').replace(/\s*\(.*?\)\s*/g, '').replace(/\s*\[.*?\]\s*/g, '').replace('--', '-')

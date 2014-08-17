@@ -27,9 +27,6 @@
     list-style-type: none;
     padding: 5px 10px;
     cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     border-right: 1px dashed $gray;
     height: 30px;
 
@@ -61,6 +58,18 @@
 
     &:active {
       color: black;
+    }
+
+    .title {
+      width: 90%;
+      float: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .link {
+      float: right;
     }
   }
 }

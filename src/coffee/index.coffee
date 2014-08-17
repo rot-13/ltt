@@ -10,7 +10,7 @@ $ ->
 
   links = new App.Models.RedditLinksCollection
 
-  $.getJSON('//reddit.com/r/listentothis/hot.json?jsonp=?').done (response) ->
+  $.getJSON('//reddit.com/r/listentothis/hot.json?limit=40&jsonp=?').done (response) ->
     for link in response.data.children
       if link.data.domain in ['www.youtube.com', 'm.youtube.com', 'youtube.com', 'youtu.be']
         redditLink = new App.Models.RedditLink
