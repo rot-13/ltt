@@ -1,4 +1,4 @@
-* More songs from reddit (pagination?).
-* Link to original reddit thread.
-* Favorite (share playlist?).
-* Link to github repo?
+* Get more songs from reddit.
+* Link to original reddit thread in playlist.
+* Share playlist in facebook / share in twitter facebook.
+* Check in IE, safari, firefox.
