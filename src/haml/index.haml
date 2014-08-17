@@ -66,4 +66,11 @@
             %a{:href => 'https://github.com/iic-ninjas/ltt'}= 'Github'
             %span><= '.'
 
+  %script#row-template
+    .title
+      %strong= '<%= index %>.'
+      %span= '<%= title %>'
+    .link
+      %a{:href => '<%= url %>'}= 'Link'
+
   %script{type: "text/javascript", src: "/js/index.js"}

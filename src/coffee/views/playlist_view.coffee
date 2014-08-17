@@ -1,5 +1,5 @@
 class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
-  template: _.template("<div class='title'><strong><%= index %>.</strong> <%= title %></div><div class='link'><a href='<%= url %>' target='_blank'>Link</a></div>")
+  template: _.template($('#row-template').html())
   tagName: 'li'
 
   events:
