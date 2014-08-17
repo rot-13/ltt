@@ -8,7 +8,6 @@ class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
   serializeData: ->
     title: @_playlistTitle()
     index: @_playlistIndex() + 1
-    url: @model.get('redditUrl')
 
   _playlistTitle: ->
     @model.get('title').replace(/\s*\(.*?\)\s*/g, '').replace(/\s*\[.*?\]\s*/g, '').replace('--', '-')

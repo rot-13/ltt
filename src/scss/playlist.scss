@@ -30,6 +30,11 @@
     border-right: 1px dashed $gray;
     height: 30px;
 
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     &:not(:last-child) {
       border-bottom: 1px dashed $gray;
     }
@@ -58,18 +63,6 @@
 
     &:active {
       color: black;
-    }
-
-    .title {
-      width: 90%;
-      float: left;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .link {
-      float: right;
     }
   }
 }

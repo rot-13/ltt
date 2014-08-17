@@ -67,10 +67,7 @@
             %span><= '.'
 
   %script#row-template
-    .title
-      %strong= '<%= index %>.'
-      %span= '<%= title %>'
-    .link
-      %a{:href => '<%= url %>'}= 'Link'
+    %strong= '<%= index %>.'
+    %span= '<%= title %>'
 
   %script{type: "text/javascript", src: "/js/index.js"}

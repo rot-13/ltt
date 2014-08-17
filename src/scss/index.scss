@@ -34,4 +34,9 @@ body {
 
 a.subreddit {
   border-bottom: dashed 1px $blue;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: dashed 1px #2a6496;
+  }
 }
