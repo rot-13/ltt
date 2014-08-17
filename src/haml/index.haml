@@ -1,11 +1,12 @@
 !!! 5
 %html{:lang => 'en'}
   %head
-    %title= 'i Listen To This'
+    %title= 'Yo Listen To This'
 
     %meta{:charset => 'utf-8'}
     %meta{:name => 'description', :content => 'Listen to the hot songs in /r/ListenToThis'}
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no'}
+    %meta{:property => 'og:image', :content => '/images/logo.png'}
 
     %link{:href => '/images/favicon.png', :rel => 'shortcut icon'}
 
@@ -23,7 +24,7 @@
       .col-xs-12
         .logo.pull-left
         .title.pull-left
-          %h1= 'i Listen to This'
+          %h1= 'Yo Listen to This'
           %p.lead
             %span= 'All the hot songs from'
             %a.subreddit{:href => 'http://www.reddit.com/r/listentothis', :target => '_blank'}= '/r/ListenToThis'
@@ -40,7 +41,7 @@
       .row
         .col-xs-12
           %p
-            %strong i Listen to This
+            %strong Yo Listen to This
             was created by the
             %a{:href => 'http://notninjas.com', :target => '_blank'}= 'Not Ninjas'
             at the eBay Israel Innovation Center:
@@ -50,6 +51,10 @@
             %a{:href => 'https://twitter.com/gardenofwine', :target => '_blank'}= '@gardenofwine'
             %span= 'and'
             %a{:href => 'https://twitter.com/ShayHDavidson', :target => '_blank'}= '@ShayHDavidson'
+            %span><= '.'
+          %p
+            Feel free to contribute to the project in
+            %a{:href => 'https://github.com/iic-ninjas/ltt'}= 'Github'
             %span><= '.'
 
   %script{type: "text/javascript", src: "/js/index.js"}
