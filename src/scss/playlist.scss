@@ -2,6 +2,9 @@
   $gray: #757575;
 
   background-color: white;
+  margin-top: 5vw;
+
+  @media (min-width: 768px) { margin-top: 0; }
 
   ul {
     overflow-y: scroll;
