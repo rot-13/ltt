@@ -13,7 +13,7 @@
   padding: 1px;
 
   &.left {
-    $transform: rotate(-2deg);
+    $transform: rotate(-2deg) translate3d(0, 0, 0);
     transform: $transform;
     -webkit-transform: $transform;
     -ms-transform: $transform;
@@ -22,7 +22,7 @@
   }
 
   &.right {
-    $transform: rotate(3deg);
+    $transform: rotate(3deg) translate3d(0, 0, 0);
     transform: $transform;
     -webkit-transform: $transform;
     -ms-transform: $transform;
