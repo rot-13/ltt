@@ -1,9 +1,10 @@
 class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
-  template: _.template('<strong><%= index %>.</strong> <span><%= title %></span>')
+  template: _.template("<div class='title'><strong><%= index %>.</strong> <span><%= title %></span></div><div class='link' title='See in Reddit'>➜</div>")
   tagName: 'li'
 
   events:
-    'click': '_onClick'
+    'click .title': '_onSongClick'
+    'click .link': '_onLinkClick'
 
   serializeData: ->
     title: @_playlistTitle()
@@ -15,10 +16,12 @@ class App.Views.PlaylistRowView extends Backbone.Marionette.ItemView
   _playlistIndex: ->
     @model.collection.indexOf(@model)
 
-  _onClick: ->
+  _onSongClick: ->
     return if @$el.hasClass('playing')
     App.trigger('playlist:selected', @_playlistIndex())
 
+  _onLinkClick: ->
+    window.open(@model.get('redditUrl'), '_blank')
 
 class App.Views.PlaylistView extends Backbone.Marionette.CollectionView
   childView: App.Views.PlaylistRowView
