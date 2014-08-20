@@ -4,9 +4,13 @@
     %title= 'Yo Listen To This'
 
     %meta{:charset => 'utf-8'}
-    %meta{:name => 'description', :content => 'Listen to the current hot songs in /r/ListenToThis. New music everytime you check!'}
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no'}
+
+    %meta{:name => 'description', :content => 'Listen to the current hot songs in /r/ListenToThis. New music everytime you check!'}
     %meta{:property => 'og:image', :content => '/images/logo-share.png'}
+    %meta{:property => 'og:url', :content => 'http://www.yolistentothis.com/'}
+    %meta{:property => 'og:type', :content => 'website'}
+    %meta{:property => 'og:title', :content => 'Yo Listen to This'}
 
     %link{:href => '/images/favicon.png', :rel => 'shortcut icon'}
 
@@ -50,10 +54,9 @@
       .row
         .col-xs-10
           %p
-            %strong Yo Listen to This
-            was created by the
+            %span= 'Created by the'
             %a{:href => 'http://notninjas.com', :target => '_blank'}= 'Not Ninjas'
-            at the eBay Israel Innovation Center:
+            %span= 'at the eBay Israel Innovation Center:'
           %p
             %a.before-punctuation{:href => 'https://twitter.com/assafgelber', :target => '_blank'}= '@assafgelber'
             %span= ','
@@ -62,7 +65,7 @@
             %a{:href => 'https://twitter.com/ShayHDavidson', :target => '_blank'}= '@ShayHDavidson'
             %span><= '.'
           %p
-            Feel free to contribute to the project in
+            %span= 'Feel free to contribute to the project in'
             %a{:href => 'https://github.com/iic-ninjas/ltt'}= 'Github'
             %span><= '.'
         .col-xs-2
