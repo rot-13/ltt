@@ -71,4 +71,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-watch')
 
   grunt.registerTask('compile', ['sass', 'coffee', 'haml', 'concat', 'copy'])
-  grunt.registerTask('default', ['compile'])
+  grunt.registerTask('default', ['compile', 'watch'])

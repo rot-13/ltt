@@ -1,7 +1,7 @@
-Optional:
-* Add links to original reddit thread?
-* add reddit score near song?
-* Add post-deploy script to Heroku (`grunt`).
+Grunt
+* Add post-deploy script to Heroku (`grunt`) - Maybe requires an express app instead of Rack.
+* Add grunt-contrib-clean to remove the `tmp` folder after compile.
 
 Bugs:
 * Safari overflow doesn't work.
+
