@@ -49,6 +49,8 @@ module.exports = (grunt) ->
         src: ['tmp/**/*.js'],
         dest: 'public/js/index.js',
 
+    clean: ['tmp']
+
     watch:
       sass:
         files: 'src/scss/**/*.scss'
@@ -68,7 +70,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-haml')
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-concat')
+  grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('compile', ['sass', 'coffee', 'haml', 'concat', 'copy'])
+  grunt.registerTask('compile', ['sass', 'coffee', 'haml', 'concat', 'copy', 'clean'])
   grunt.registerTask('default', ['compile', 'watch'])
