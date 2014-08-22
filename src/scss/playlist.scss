@@ -7,7 +7,7 @@
   @media (min-width: 768px) { margin-top: 0; }
 
   ul {
-    overflow-y: scroll;
+    overflow: auto;
     height: 100%;
 
     margin: 0;
@@ -21,7 +21,9 @@
   }
 
   .ul-border {
-    height: 2px;
+    position: relative;
+    z-index: 1000;
+    height: 1px;
     border-top: 1px dashed $gray;
   }
 

@@ -17,6 +17,7 @@
   border-radius: 2px;
   padding: 1px; }
   .photo.left {
+    box-sizing: content-box;
     transform: rotate(-2deg) translate3d(0, 0, 0);
     -webkit-transform: rotate(-2deg) translate3d(0, 0, 0);
     -ms-transform: rotate(-2deg) translate3d(0, 0, 0);
@@ -48,7 +49,7 @@
     .playlist {
       margin-top: 0; } }
   .playlist ul {
-    overflow-y: scroll;
+    overflow: auto;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -58,7 +59,9 @@
     -moz-user-select: none;
     -ms-user-select: none; }
   .playlist .ul-border {
-    height: 2px;
+    position: relative;
+    z-index: 1000;
+    height: 1px;
     border-top: 1px dashed #757575; }
   .playlist li {
     color: #757575;

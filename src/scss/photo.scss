@@ -26,6 +26,7 @@
   padding: 1px;
 
   &.left {
+    box-sizing: content-box;
     $transform: rotate(-2deg) translate3d(0, 0, 0);
     transform: $transform;
     -webkit-transform: $transform;
