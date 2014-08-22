@@ -48,8 +48,17 @@
   @media (min-width: 768px) {
     .playlist {
       margin-top: 0; } }
+  .playlist ::-webkit-scrollbar {
+    -webkit-appearance: none; }
+  .playlist ::-webkit-scrollbar:vertical {
+    width: 8px; }
+  .playlist ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); }
+  .playlist ::-webkit-scrollbar-track {
+    border-left: 1px dashed #757575;
+    background-color: #eee; }
   .playlist ul {
-    overflow: auto;
+    overflow-y: scroll;
     height: 100%;
     margin: 0;
     padding: 0;
