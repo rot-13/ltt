@@ -59,6 +59,11 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: inline-block;
+
+      .genre {
+        margin-left: 5px;
+        color: lighten($gray, 25%);
+      }
     }
 
     .link {
