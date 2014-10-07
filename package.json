@@ -1,4 +1,20 @@
 {
+    "main": "public/index.html",
+    "node-remote": "<local>",
+    "window": {
+        "title": "LTT Demo",
+        "icon": "public/images/logo-share.icns",
+        "toolbar": false,
+        "frame": true,
+        "width": 1024,
+        "height": 540,
+        "position": "mouse",
+        "resizable": false
+    },
+    "webkit": {
+        "plugin": true
+    },
+
     "name": "iic-ninjas-listen-to-this",
     "version": "0.2.0",
     "repository":
