@@ -4,6 +4,7 @@ class App.Models.RedditLink extends Backbone.Model
     linkUrl: null
     youtubeId: null
     title: null
+    genre: null
     redditUrl: null
 
 class App.Models.RedditLinksCollection extends Backbone.Collection

@@ -17,6 +17,7 @@ $ ->
           redditUrl: "http://reddit.com#{link.data.permalink}"
           youtubeId: getYoutubeId(link.data.url)
           title:     link.data.title
+          genre:     link.data.link_flair_text
           videoUrl:  link.data.url
 
         links.add(redditLink)
